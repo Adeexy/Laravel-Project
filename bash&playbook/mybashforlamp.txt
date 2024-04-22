@@ -1,0 +1,91 @@
+ 
+                                                                                     deploy_lamp.sh                                                                                         
+
+#!/bin/bash
+# Update&Upgrade for the Linux system
+sudo apt update -y
+sudo apt upgrade -y
+
+# Install Apache web server
+sudo apt install apache2 -y
+
+# Add the PHP ondrej repository and update your repository again
+sudo add-apt-repository ppa:ondrej/php -y
+sudo apt update -y
+
+# Install PHP 8.2 and some dependencies needed for Laravel
+sudo apt install php8.2 php8.2-curl php8.2-dom php8.2-mbstring php8.2-xml php8.2-mysql zip unzip -y
+
+# Enable rewrite module for Apache
+sudo a2enmod rewrite
+
+# Restart Apache server
+sudo systemctl restart apache2
+
+# Install Composer
+cd /usr/bin
+sudo curl -sS https://getcomposer.org/installer | sudo php
+sudo mv composer.phar composer
+
+# Set COMPOSER_ALLOW_SUPERUSER environment variable to prevent prompts
+export COMPOSER_ALLOW_SUPERUSER=1
+
+# Change directory to /var/www and clone Laravel repo
+cd /var/www/
+sudo git clone https://github.com/laravel/laravel.git
+sudo chown -R $USER:$USER /var/www/laravel
+
+# Install Composer dependencies and update
+cd laravel/
+composer install --optimize-autoloader --no-dev
+composer update
+
+# Copy the content of the default .env.example file to .env
+sudo cp .env.example .env
+sudo chown -R www-data storage
+sudo chown -R www-data bootstrap/cache
+
+# Create Apache VirtualHost configuration for Laravel
+sudo tee /etc/apache2/sites-available/latest.conf > /dev/null <<EOF
+<VirtualHost *:80>
+    ServerName localhost
+    DocumentRoot /var/www/laravel/public
+
+    <Directory /var/www/laravel>
+        AllowOverride All
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/laravel-error.log
+    CustomLog ${APACHE_LOG_DIR}/laravel-access.log combined
+</VirtualHost>
+EOF
+
+# Enable the new site and disable the default one
+sudo a2ensite latest.conf
+sudo a2dissite 000-default.conf
+sudo systemctl restart apache2
+
+# Install MySQL Client
+sudo apt install mysql-server mysql-client -y
+
+# Start MySQL service and create database and user
+sudo systemctl start mysql
+sudo mysql -uroot -e "CREATE DATABASE laravelDB;"
+sudo mysql -uroot -e "CREATE USER 'ayobami'@'localhost' IDENTIFIED BY 'aderemi';"
+sudo mysql -uroot -e "GRANT ALL PRIVILEGES ON laravelDB.* TO 'ayobami'@'localhost';"
+
+
+# Update .env file with MySQL configuration
+sudo sed -i "23s/^#//g; 24s/^#//g; 25s/^#//g; 26s/^#//g; 27s/^#//g" /var/www/laravel/.env
+sudo sed -i '22s/=sqlite/=mysql/; 23s/=127.0.0.1/=localhost/; 24s/=3306/=3306/; 25s/=laravel/=laravelDB/; 26s/=root/=ayobami/; 27s/=/=aderemi/' /var/www/laravel/.env
+
+# Generate application key and create symbolic link for storage
+sudo php artisan key:generate
+sudo php artisan storage:link
+
+# Run database migrations and seeding
+sudo php artisan migrate
+sudo php artisan db:seed
+
+# Restart Apache server
+sudo systemctl restart apache2

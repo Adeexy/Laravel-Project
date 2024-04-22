@@ -1,0 +1,29 @@
+---
+- name: Deploy LAMP stack and Laravel
+  hosts: Slave
+  become: true
+  remote_user: vagrant # Specify the SSH user to use for connections
+
+  tasks:
+    - name: Copy lamp.sh script to target hosts
+      ansible.builtin.copy:
+        src: /home/vagrant/deploy_lamp.sh
+        dest: /home/vagrant/deploy_lamp.sh
+        owner: vagrant
+        group: vagrant
+        mode: '0755'
+
+    - name: Execute lamp.sh script on target hosts
+      script: /home/vagrant/deploy_lamp.sh
+
+    - name: Create cron job to check server uptime
+      cron:
+        name: "Check server uptime"
+        minute: "0"   # Change minute to 0 for 12 AM
+        hour: "0"     # Change hour to 0 for 12 AM
+        job: "uptime >> /var/log/server_uptime.log"
+
+    - name: Verify PHP application accessibility
+      uri:
+        url: http://{{ ansible_host }}/index.php
+      register: result
