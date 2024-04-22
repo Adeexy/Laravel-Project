@@ -9,7 +9,7 @@ Vagrant Up for the Servers
 Vagrant up showing the Slave Server
 ![vagrant up2](https://github.com/Adeexy/Laravel-Project/assets/151438215/c5c819d7-419f-4598-9f4d-053cb5e85cbd)
 
-Vagrant ssh for the Servers
+
 ![vagrant ssh Master](https://github.com/Adeexy/Laravel-Project/assets/151438215/2af6f90c-9347-4a73-9396-d2ca696f3005)
 
 ![vagrant ssh Slave](https://github.com/Adeexy/Laravel-Project/assets/151438215/c1f9f95e-afa4-4e9e-8073-2adcebd2e8df)
