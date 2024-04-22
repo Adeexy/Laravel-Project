@@ -15,5 +15,7 @@ Vagrant up showing the Slave Server
 ![vagrant ssh Slave](https://github.com/Adeexy/Laravel-Project/assets/151438215/c1f9f95e-afa4-4e9e-8073-2adcebd2e8df)
 
 
-Create file for the Bash Script deploy_lamp
+Create file for the Bash Script deploy_lamp on the Master Server
 ![bashscript for lamp1](https://github.com/Adeexy/Laravel-Project/assets/151438215/ea046867-4c53-48c8-a781-4cc027e6f07b)
+
+![bashscript for lamp2](https://github.com/Adeexy/Laravel-Project/assets/151438215/8022aecc-3f69-4ede-9615-60fd4a391200)
