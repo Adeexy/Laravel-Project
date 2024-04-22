@@ -1,5 +1,6 @@
 # Laravel-Project
 2nd Semester Exam
+
 Vagrantfile automating the provision of Ubuntu Servers "Master" and "Slave"
 ![VagrantfileforServer](https://github.com/Adeexy/Laravel-Project/assets/151438215/aabee7c2-5d02-4027-bc11-1f0d81341d80)
 
