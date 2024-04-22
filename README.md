@@ -27,3 +27,6 @@ Last screenshot of the script
 
 Ansible installation on Master server
 ![ansible installation on master](https://github.com/Adeexy/Laravel-Project/assets/151438215/8c2aaeeb-7cac-43d9-a18f-14088b39d5c2)
+
+The inventory.ini file for ansible setting the slave server Ip Address
+![inventory file](https://github.com/Adeexy/Laravel-Project/assets/151438215/a5eb100a-ae20-4b4d-97ee-6ce72814df06)
