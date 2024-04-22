@@ -5,3 +5,6 @@ Vagrantfile automating the provision of Ubuntu Servers "Master" and "Slave"
 
 Vagrant Up for the Servers
 ![vagrant up 1](https://github.com/Adeexy/Laravel-Project/assets/151438215/5aec4bd9-a4d1-4d6b-9325-8cfcb16b193f)
+
+Vagrant up showing the Slave
+![vagrant up2](https://github.com/Adeexy/Laravel-Project/assets/151438215/c5c819d7-419f-4598-9f4d-053cb5e85cbd)
