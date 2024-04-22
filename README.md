@@ -37,3 +37,7 @@ The inventory.ini file for ansible setting the slave server Ip Address
 
 Ansible ping command result to the Slave server
 ![ansible ping2slave](https://github.com/Adeexy/Laravel-Project/assets/151438215/9eb563d7-524f-4360-8312-9ad4d48164aa)
+
+the ansible playbook
+
+![create the playbook](https://github.com/Adeexy/Laravel-Project/assets/151438215/e2d93a12-d1e1-4a34-b72a-65b76d0dc10b)
