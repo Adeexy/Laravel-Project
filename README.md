@@ -41,3 +41,6 @@ Ansible ping command result to the Slave server
 Creating the ansible playbook
 
 ![create the playbook](https://github.com/Adeexy/Laravel-Project/assets/151438215/e2d93a12-d1e1-4a34-b72a-65b76d0dc10b)
+
+the playbook file
+![my ansible lampsonslave playbook](https://github.com/Adeexy/Laravel-Project/assets/151438215/b04931bf-2b2b-4482-8cf0-708d4778b175)
