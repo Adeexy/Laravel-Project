@@ -19,3 +19,5 @@ Create file for the Bash Script deploy_lamp on the Master Server
 ![bashscript for lamp1](https://github.com/Adeexy/Laravel-Project/assets/151438215/ea046867-4c53-48c8-a781-4cc027e6f07b)
 
 ![bashscript for lamp2](https://github.com/Adeexy/Laravel-Project/assets/151438215/8022aecc-3f69-4ede-9615-60fd4a391200)
+
+![bashscript for lamp3](https://github.com/Adeexy/Laravel-Project/assets/151438215/2aed5910-22b4-4f24-9cea-22574716d672)
