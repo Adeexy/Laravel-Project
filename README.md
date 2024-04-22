@@ -25,6 +25,9 @@ Create file for the Bash Script deploy_lamp on the Master Server
 Last screenshot of the script
 ![bashscript for lamp4](https://github.com/Adeexy/Laravel-Project/assets/151438215/14f78a0c-a25d-43a9-a455-5b995f8b4649)
 
+Set Permission for the script
+![Set permissions for script](https://github.com/Adeexy/Laravel-Project/assets/151438215/58a6e2b0-e6a0-4c7e-ba6e-3c4c65eab6b9)
+
 Ansible installation on Master server
 ![ansible installation on master](https://github.com/Adeexy/Laravel-Project/assets/151438215/8c2aaeeb-7cac-43d9-a18f-14088b39d5c2)
 
