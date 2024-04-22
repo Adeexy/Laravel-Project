@@ -30,3 +30,6 @@ Ansible installation on Master server
 
 The inventory.ini file for ansible setting the slave server Ip Address
 ![inventory file](https://github.com/Adeexy/Laravel-Project/assets/151438215/a5eb100a-ae20-4b4d-97ee-6ce72814df06)
+
+Ansible ping command result to the Slave server
+![ansible ping2slave](https://github.com/Adeexy/Laravel-Project/assets/151438215/9eb563d7-524f-4360-8312-9ad4d48164aa)
