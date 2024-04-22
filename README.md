@@ -45,7 +45,7 @@ Creating the ansible playbook
 the playbook file
 ![my ansible lampsonslave playbook](https://github.com/Adeexy/Laravel-Project/assets/151438215/b04931bf-2b2b-4482-8cf0-708d4778b175)
 
-Ansible deployment on the Master server showing succesfull execution of the bash script on the Slave node and verify that the PHP application is accessible through the VM’s IP address
+Ansible deployment on the Master server showing succesfull execution of the bash script on the Slave node and verify that the PHP application is accessible through it's IP address
 ![ansible deployment1](https://github.com/Adeexy/Laravel-Project/assets/151438215/8a78f7ae-78ea-49ee-83d3-96e876ed0245)
 
 ![laravelappwithip](https://github.com/Adeexy/Laravel-Project/assets/151438215/c33fe85c-3cbf-4cba-868d-6fb8a2711fc4)
